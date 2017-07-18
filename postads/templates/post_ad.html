@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% block title %}Bookmarks{% endblock %}
+{% block content %}
+<div class="container-fluid">
+<form action="/postad/" method="post">{% csrf_token %}
+{{ form.non_field_errors }}
+<div class="container thumbnail">
+<label for="id_name"> Name</label>
+{{ form.name }}
+{{ form.name.errors }}
+
+</div>
+
+<div class="container thumbnail">
+<label for="id_email"> Email</label>
+{{ form.email }}
+{{ form.email.errors }}
+
+</div>
+
+<div class="container thumbnail">
+<label for="id_gist"> Gist</label>
+{{ form.gist}}
+{{ form.gist.errors }}
+
+</div>
+
+
+<div class="container-fluid thumbnail">
+<label for="id_category"> Category</label>
+{{ form.category }}
+{{ form.category.errors }}
+
+</div>
+
+<div class="container thumbnail">
+<label for="id_name"> Location</label>
+{{ form.location }}
+{{ form.location.errors }}
+
+</div>
+
+<div class="container thumbnail">
+<label for="id_description"> Description</label>
+<div class="container">
+{{ form.description }}</div>
+{{ form.description.errors }}
+
+</div>
+
+<div class="container thumbnail ">
+<label for="id_expire"> Expire</label>
+{{ form.expire }}
+{{ form.expire.errors }}
+
+</div>
+
+<button type="submit">
+	<i class="fa fa-thumb-tack"></i>Post
+</button>
+</form>
+</div>
+{% endblock %}

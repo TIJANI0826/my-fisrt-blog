@@ -1,0 +1,41 @@
+{% load staticfiles %}
+{% load bootstrap3 %}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+         <meta charset="UTF-8">
+        <title>Django Bookmarks |
+        {% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+
+        <style type="text/css">
+            .multiple-checkbox ul { /* Used to hide <li> elements in multiple checkbox forms */
+              padding-left: 0px;
+              list-style: none;
+            }
+        </style>
+
+    </head>
+<body>
+<nav class="navbar navbar-default" role="navigation">
+<div class="container">
+      <ul class="nav nav-tabs right" role="tablist">
+        <li><a href="/postad">Home</a></li>
+      </ul>
+</div>
+</nav>
+
+
+    <div class="container"><h4>{% block head %}{% endblock %}</h4></div>
+<hr>
+        {% block content %}{% endblock %}
+
+      
+
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}Bookmarks{% endblock %}
+{% block content %}
+
+{% if user %}
+    <div class="container">
+        <h1>welcome user {{ user.name }}</h1>
+		<h1>{{ user.email }}</h1>
+		<h1>{{user.gist}}</h1>
+		<h1>{{user.category.}}</h1>
+		<h1>{{user.location}}</h1>
+		<h1>{{user.description}}</h1>
+		<h1>{{user.expire}}</h1>
+
+    </div>
+
+
+{% else %}
+<div class="container">No bookmarks found.<br>
+    Click <a href={% url 'postad' %} id="a">Save</a> to save bookmarks
+</div>
+
+{% endif %}
+{% endblock %}
