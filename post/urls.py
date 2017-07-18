@@ -20,5 +20,5 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^postad/',views.PostAdPage.as_view()),
     url(r'^successful/',views.successful),
-    url(r'^user/(\w+)/$',views.users.user.name)
+    #url(r'^user/(\w+)/$',views.users.user.name)
 ]
